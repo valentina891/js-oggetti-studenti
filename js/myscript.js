@@ -11,8 +11,8 @@ $(document).ready(function(){
 
 //#1: Creo oggetto con proprietà richieste:
 var studente = {
-    'nome': 'Valeria',
-    'cognome': 'Curseri',
+    'nome': 'Pinco',
+    'cognome': 'Pallino',
     'età': 26,
 };
 
@@ -24,33 +24,33 @@ for (var k in studente) {
 //#3: Creo array di oggetti di studenti:
 var studenti = [
     {
-        'nome': 'Ina',
-        'cognome': 'Metaliu',
+        'nome': 'Mulan',
+        'cognome': 'Fa',
         'eta': 29,
     },
     {
-        'nome': 'Pietro',
-        'cognome': 'Sette',
+        'nome': 'Pluto',
+        'cognome': 'Fedelis',
         'eta': 37,
     },
     {
-        'nome': 'Martina',
-        'cognome': 'Fiore',
+        'nome': 'Paperino',
+        'cognome': 'Giallo',
         'eta': 25,
     },
     {
-        'nome': 'Alberto',
-        'cognome': 'Zordan',
+        'nome': 'Topolino',
+        'cognome': 'Belloecarino',
         'eta': 36,
     },
 ];
 
 //#3.1: Ciclo su tutti gli studenti e stampa nome e cognome:
 for (var i = 0; i < studenti.length; i++) {
-    console.log(studenti[i]);
-    for (var k in studenti) {
-        console.log(studenti[k].nome + ' ' + studenti[k].cognome);
-    }
+    // console.log(studenti[i]);
+    // for (var k in studenti) {
+        console.log(studenti[i].nome + ' ' + studenti[i].cognome);
+    // }
 }
 
 //#4: 3 prompt per aggiunta oggetto studente da parte dell'utente:
@@ -64,5 +64,31 @@ studenti.push({
     'eta': eta,
 });
 console.log(studenti);
+
+//Variante:
+
+//var nuovoStudente = {
+//'nome': prompt('Inserisci il nome'),
+//'cognome': prompt('Inserisci il cognome'),
+//'eta': parseInt(prompt('Inserisci l\'eta')),
+//}
+//studenti.push(nuovoStudente);
+//console.log(studenti);
+
+//***Correzione con Handlebars***:
+
+for (var i = 0; i < studenti.length; i++){
+    // console.log(studenti[i]);
+    var student = studenti[i];
+    console.log(student);
+
+    var source = $('#entry-template').html();
+    var template = Handlebars.compile(source);
+
+    var html = template(student);
+
+    $('#stud').append(html);
+
+    }
 
 });

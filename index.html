@@ -5,11 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Oggetti JS</title>
 </head>
 <body>
 
+    <ul id="stud"></ul>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        <li class="entry">
+            <h2>Nome e Cognome: {{nome}} {{cognome}}</h2>
+            <span class="body">
+            Età: {{eta}}
+            </span>
+        </li>
+    </script>
 
 
 
